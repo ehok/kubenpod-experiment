@@ -1,6 +1,9 @@
 package version
 
-import "runtime"
+import (
+	"fmt"
+	"runtime"
+)
 
 var (
 	gitVersion = "none"
@@ -28,4 +31,9 @@ type Version struct {
 
 func Get() Version {
 	return ver
+}
+
+func PrintVersion() {
+	v := Get()
+	fmt.Printf("Version: %s\nGit commit: %s\nBuild date: %s\n", v.GitVersion, v.GitCommit, v.BuildDate)
 }
