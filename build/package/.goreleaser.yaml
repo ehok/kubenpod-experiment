@@ -19,7 +19,7 @@ builds:
       - amd64
     binary: kubenpod
     ldflags:
-      - -s -w -X github.com/ehok/kubenpod/internal/version.gitVersion={{ .Version }} -X github.com/ehok/kubenpod/internal/version.gitCommit={{ .ShortCommit }}  -X github.com/ehok/kubenpod/internal/version.buildDate={{ .CommitDate }}
+      - -s -w -X github.com/ehok/kubenpod/internal/version.gitVersion={{ .Version }} -X github.com/ehok/kubenpod/internal/version.gitCommit={{ .ShortCommit }} -X github.com/ehok/kubenpod/internal/version.buildDate={{ .CommitDate }}
     main: ./main.go
 
 archives:
@@ -47,14 +47,28 @@ changelog:
       - '^Merge branch'
       - '^Merge pull request'
 
+# brews:
+#  - name: kubenpod
+#    tap:
+#      owner: ehok
+#      name: homebrew-tap
+#      token: "{{ secrets.PAT_TOKEN }}"
+#    folder: Formula
+#    goarm: 6
+#    homepage: https://github.com/ehok/kubenpod
+#    license: apache-2.0
+#    description: kubenpod does something
+
 brews:
- - name: kubenpod
-   tap:
-     owner: ehok
-     name: homebrew-tap
-     token: "{{ secrets.PAT_TOKEN }}"
-   folder: Formula
-   goarm: 6
-   homepage: https://github.com/ehok/kubenpod
-   license: apache-2.0
-   description: kubenpod does something
+  - name: kubenpod
+    tap:
+      owner: ehok
+      name: homebrew-tap
+    commit_author:
+      name: engin
+      email: engincanhoke@gmail.com
+    description: kubenpod does something
+    homepage: https://github.com/ehok/kubenpod
+    license: apache-2.0
+    install: |
+      bin.install "kubenpod"
