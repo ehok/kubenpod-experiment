@@ -91,6 +91,8 @@ jobs:
         with:
           go-version-file: "go.mod"
           cache: true
+      - name: Print GoReleaser Config
+        run: cat build/package/.goreleaser.yaml
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
