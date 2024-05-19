@@ -12,8 +12,6 @@ import (
 	"k8s.io/metrics/pkg/client/clientset/versioned"
 )
 
-// const cliVersion = "1.2.0"
-
 var (
 	podName       string
 	namespace     string
@@ -52,7 +50,6 @@ var cmdVersion = &cobra.Command{
 	Short: "Print the version number of kubenpod and the Kubernetes server",
 	Run: func(cmd *cobra.Command, args []string) {
 		version.PrintVersion()
-		// fmt.Printf("kubenpod version %s\n", cliVersion)
 		version, err := clientset.Discovery().ServerVersion()
 		if err != nil {
 			fmt.Printf("Error fetching Kubernetes server version: %s\n", err)
