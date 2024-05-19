@@ -12,7 +12,7 @@ import (
 	"k8s.io/metrics/pkg/client/clientset/versioned"
 )
 
-const cliVersion = "1.2.0"
+// const cliVersion = "1.2.0"
 
 var (
 	podName       string
