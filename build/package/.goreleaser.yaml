@@ -19,7 +19,7 @@ builds:
       - amd64
     binary: kubenpod
     ldflags:
-      - -s -w -X github.com/ehok/kubenpod/internal/version.gitVersion={{ .Version }} -X github.com/ehok/kubenpod/internal/version.gitCommit={{ .ShortCommit }} -X github.com/ehok/kubenpod/internal/version.buildDate={{ .CommitDate }}
+      - -s -w -X github.com/ehok/kubenpod/version.gitVersion={{ .Version }} -X github.com/ehok/kubenpod/version.gitCommit={{ .ShortCommit }} -X github.com/ehok/kubenpod/version.buildDate={{ .CommitDate }}
     main: ./main.go
 
 archives:

@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/ehok/kubenpod/pkg/k8s"
+	"github.com/ehok/kubenpod/version"
 	"github.com/spf13/cobra"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
@@ -50,7 +51,8 @@ var cmdVersion = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number of kubenpod and the Kubernetes server",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("kubenpod version %s\n", cliVersion)
+		version.PrintVersion()
+		// fmt.Printf("kubenpod version %s\n", cliVersion)
 		version, err := clientset.Discovery().ServerVersion()
 		if err != nil {
 			fmt.Printf("Error fetching Kubernetes server version: %s\n", err)
