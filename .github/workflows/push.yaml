@@ -99,5 +99,5 @@ jobs:
           args: release --clean --config build/package/.goreleaser.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-#          TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
+          TAP_GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 

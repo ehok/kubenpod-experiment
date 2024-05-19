@@ -47,15 +47,14 @@ changelog:
       - '^Merge branch'
       - '^Merge pull request'
 
-#brews:
-#  - name: kubenpod
-#    tap:
-#      owner: ehok
-#      name: homebrew-tap
-#      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-#    folder: Formula
-#    goarm: 6
-#    homepage: https://github.com/ehok/kubenpod
-#    license: apache-2.0
-#    description: kubenpod does something
-
+brews:
+ - name: kubenpod
+   tap:
+     owner: ehok
+     name: homebrew-tap
+     token: "{{ secrets.PAT_TOKEN }}"
+   folder: Formula
+   goarm: 6
+   homepage: https://github.com/ehok/kubenpod
+   license: apache-2.0
+   description: kubenpod does something
