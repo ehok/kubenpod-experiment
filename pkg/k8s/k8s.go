@@ -73,8 +73,8 @@ func ListPod(node string, clientset *kubernetes.Clientset) {
 		return
 	}
 
-	var maxPodNameLen int = len("Pod")
-	var maxNamespaceLen int = len("Namespace")
+	var maxPodNameLen = len("Pod")
+	var maxNamespaceLen = len("Namespace")
 
 	for _, pod := range pods.Items {
 		if len(pod.Name) > maxPodNameLen {

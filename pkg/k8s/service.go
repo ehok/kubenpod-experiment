@@ -11,7 +11,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 )
 
-func PromptForService(clientset *kubernetes.Clientset) (string, string) {
+func PromptForService(clientset *kubernetes.Clientset) (serviceName string, namespace string) {
 	svcList, err := clientset.CoreV1().Services("").List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
 		fmt.Printf("Error listing services across all namespaces: %v\n", err)
